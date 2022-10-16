@@ -19,6 +19,7 @@
             <label for="address">住所:</label>
             <input type="text" name="address" id="address" value="{{ old("address", $shop->address) }}">
         </div>
+        <div id="map" style="height:50vh;"></div>
         <div>
             <input type="submit" value="修正">
         </div>
@@ -26,3 +27,8 @@
     <a href="{{ route('shops.show', $shop) }}">詳細へ戻る</a>
 
 @endsection
+
+@section('script')
+    @include('partial.map')
+@endsection
+

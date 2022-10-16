@@ -19,6 +19,7 @@
             <input type="text" name="address" id="address" value="{{ $shop->address }}" readonly>
         </div>
     </form>
+    <div id="map" style="height:50vh;"></div>
 
     <a href="{{ route('shops.index') }}">一覧画面</a>
     <a href="{{ route('shops.edit', $shop) }}">編集</a>
@@ -28,3 +29,7 @@
         <button type="submit" onclick="if(!confirm('削除していいですか?')){return false}">削除する</button>
     </form>
 @endsection 
+
+@section('script')
+    @include('partial.map')
+@endsection
